@@ -1,5 +1,6 @@
 "use client";
 
+import styles from './Login.module.css';
 import { useState, FormEvent } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation"; // next/navigation에서 useRouter를 임포트
@@ -29,21 +30,24 @@ const Login: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleLogin}>
-            <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-            />
-            <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit">로그인</button>
-        </form>
+        <div className={styles.container}>
+            <h1 className={styles.title}>로그인</h1>
+            <form onSubmit={handleLogin}>
+                <input
+                    type="text"
+                    placeholder="Username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <button type="submit" className={styles.button}>로그인</button>
+            </form>
+        </div>
     );
 };
 

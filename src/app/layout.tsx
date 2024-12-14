@@ -7,17 +7,17 @@ export default function RootLayout({children, // 각 페이지의 내용이 여�
 }) {
     return (
         <html lang="ko">
-        <body>
-        <div className="main-layout">
-            <Header />
+            <body>
+                <div className="main-layout">
+                    <Header />
 
-            <main>{children}</main>
+                    <main>{children}</main>
 
-            <footer>
-                <p>© 2024 나만의 웹앱</p>
-            </footer>
-        </div>
-        </body>
+                    <footer>
+                        <p>© 2024 나만의 웹앱</p>
+                    </footer>
+                </div>
+            </body>
         </html>
     );
 }
