@@ -34,12 +34,14 @@ const Login: React.FC = () => {
             <h1 className={styles.title}>로그인</h1>
             <form onSubmit={handleLogin}>
                 <input
+                    className={styles.input}
                     type="text"
                     placeholder="Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
                 <input
+                    className={styles.input}
                     type="password"
                     placeholder="Password"
                     value={password}
