@@ -14,7 +14,7 @@ export default function RootLayout({children, // 각 페이지의 내용이 여�
                     <main>{children}</main>
 
                     <footer>
-                        <p>© 2024 나만의 웹앱</p>
+                        <p>© 2025 나만의 웹앱</p>
                     </footer>
                 </div>
             </body>
