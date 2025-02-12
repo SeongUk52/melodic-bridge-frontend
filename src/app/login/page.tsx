@@ -4,11 +4,13 @@ import styles from './Login.module.css';
 import { useState, FormEvent } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation"; // next/navigation에서 useRouter를 임포트
+import { useAuth } from "@/app/features/AuthContext";
 
 const Login: React.FC = () => {
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const router = useRouter(); // router 초기화
+    const { login } = useAuth();
 
     const handleLogin = async (e: FormEvent) => {
         e.preventDefault();
@@ -19,7 +21,7 @@ const Login: React.FC = () => {
                 { username, password }
             );
             // 로그인 성공 시 JWT 토큰 저장
-            localStorage.setItem("token", response.data.token);
+            login(response.data.token);
             alert("로그인 성공!");
 
             await router.push("/"); // 홈으로 이동
