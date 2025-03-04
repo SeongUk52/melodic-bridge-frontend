@@ -4,7 +4,7 @@ import Link from 'next/link';
 import {useAuth} from "@/app/features/AuthContext";
 
 const HomePage: React.FC = () => {
-    const { isLoggedIn, logout } = useAuth();
+    const { isLoggedIn, user, logout } = useAuth();
     return (
         <div className="home-container">
             <h1>환영합니다! 서비스에 오신 것을 환영해요.</h1>
@@ -18,7 +18,11 @@ const HomePage: React.FC = () => {
                     </div>
                 </>
                 ) : (
-                <li><button onClick={logout}>로그아웃</button></li>
+                <div>
+                    <h2>{user?.username}’s Profile</h2>
+                    <p>Email: {user?.email}</p>
+                    <button onClick={logout}>로그아웃</button>
+                </div>
             )}
         </div>
     );
