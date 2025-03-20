@@ -31,10 +31,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }, []);
 
     const fetchUser = async (token: string) => {
+        if (!token) {
+            console.error("No token found!");
+            return;
+        }
+
+        console.log("Sending token:", token); // 토큰 출력 (디버깅)
+
         try {
             const response = await axios.post<User>(
                 `${process.env.NEXT_PUBLIC_API_URL}/auth/me`,
-                {}, // POST 요청이지만 데이터 없이 보냄
+                {},
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -43,6 +50,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 }
             );
 
+            console.log("Fetched user:", response.data);
             setUser(response.data);
             setIsLoggedIn(true);
         } catch (error: any) {

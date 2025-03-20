@@ -19,8 +19,6 @@ const HomePage: React.FC = () => {
                 </>
                 ) : (
                 <div>
-                    <h2>{user?.username}’s Profile</h2>
-                    <p>Email: {user?.email}</p>
                     <button onClick={logout}>로그아웃</button>
                 </div>
             )}

@@ -16,7 +16,10 @@ export default function Header() {
                             <li><Link href="/signup">회원가입</Link></li>
                         </>
                     ) : (
-                        <li><button onClick={logout}>로그아웃</button></li>
+                        <>
+                            <li><Link href="/profile">프로필</Link></li>
+                            <li><button onClick={logout}>로그아웃</button></li>
+                        </>
                     )}
                 </ul>
             </nav>
