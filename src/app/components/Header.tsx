@@ -9,7 +9,7 @@ export default function Header() {
         <header>
             <nav>
                 <ul>
-                    <li><Link href="/">홈</Link></li>
+                    <li><Link href="/">멜로딕 브릿지</Link></li>
                     {!isLoggedIn ? (
                         <>
                             <li><Link href="/login">로그인</Link></li>

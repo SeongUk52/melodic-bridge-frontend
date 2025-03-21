@@ -4,9 +4,10 @@ h1 a {
 }
 
 header {
-    background-color: #b2d5ff;
+    background-color: #2f3e4f;
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
 }
 
 nav ul {
@@ -23,10 +24,21 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: #0070f3;
+    color: #bcc6ec;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #0056b3;
+    color: #ffffff;
+}
+
+nav button {
+    background-color: #2f3e4f;
+    color: #bcc6ec;
+    border: none;
+    font-size: 1rem;
+}
+
+nav button:hover {
+    color: #ffffff;
 }
