@@ -2,7 +2,7 @@
 
 import {useState} from 'react';
 
-const SignUpPage: React.FC = () => {
+const Page: React.FC = () => {
     const [username, setUsername] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -109,4 +109,4 @@ const SignUpPage: React.FC = () => {
     );
 };
 
-export default SignUpPage;
+export default Page;
